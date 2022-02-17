@@ -23,17 +23,3 @@ document.getElementById('calculate-btn').addEventListener('click', function () {
     finalBalance(allExpenses);
 });
 
-document.getElementById('save-btn').addEventListener('click', function () {
-    const getIncome = document.getElementById('income-input');
-
-    const getSavePercent = document.getElementById('save-input');
-    const savingAmount = (parseFloat(getIncome.value) * parseFloat(getSavePercent.value)) / 100;
-
-    const getSaveAmount = document.getElementById('saving-amount');
-    getSaveAmount.innerText = savingAmount;
-
-    const getRemainingBalance = document.getElementById('remaining-balance');
-    const remainingBalance = parseFloat(getIncome.value) - savingAmount;
-    getRemainingBalance.innerText = remainingBalance;
-
-})
