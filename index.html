@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bank</title>
+
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+</head>
+
+<body class="bg-info bg-opacity-10">
+    <!-- Header section Start -->
+    <header>
+        <h2 class="m-5 text-center mb-5 fw-bold">My Bank</h2>
+    </header>
+    <!-- Header section End -->
+
+    <main class="w-75 mx-auto bg-success bg-opacity-25 rounded-3">
+
+        <section class="container">
+            <div class="row p-4">
+                <!-- Image section Start -->
+                <div class="col col-lg-6 col-sm-12">
+                    <img class="img-fluid" style="height: 450px;" src="./images/myBank.jpg" alt="">
+                </div>
+                <!-- Image section End -->
+
+                <!-- Calculation Section Start -->
+                <div class="col col-lg-6 col-sm-12 d-flex flex-column align-items-center mt-4">
+                    <h4 class="text-center">Income</h4>
+                    <div class="m-1">
+                        <span>Income:</span>
+                        <input id="income-input" type="text" placeholder="Income">
+                    </div>
+                    <h4 class="text-center">Expenses</h4>
+                    <div class="m-1 ms-4">
+                        <span>Food:</span>
+                        <input id="food-ex-input" type="text" placeholder="Food Expenses">
+                    </div>
+                    <div class="m-1 ms-4">
+                        <span>Rent:</span>
+                        <input id="rent-ex-input" type="text" placeholder="Rent Expenses">
+                    </div>
+                    <div class="m-1">
+                        <span>Clothes:</span>
+                        <input id="clothes-ex-input" type="text" placeholder="Clothes Expenses">
+                    </div>
+                    <button id="calculate-btn" class="m-2 calculation-btn">Calculate</button>
+
+                    <p><strong>Total Expenses: </strong><span id="total-expenses">0000</span> </p>
+                    <p><strong>Balance: </strong><span id="balance">0000</span> </p>
+
+                    <div>
+                        <span>Save: </span>
+                        <input id="save-input" type="text" placeholder="Save Amount">
+                        <span><strong> % </strong></span>
+                        <button id="save-btn" class="m-2 calculation-btn">Save</button>
+                    </div>
+
+                    <p><strong>Saving Amount: </strong><span id="saving-amount">0000</span> </p>
+                    <p><strong>Remaining Balance: </strong><span id="remaining-balance">0000</span> </p>
+                </div>
+                <!-- Calculation Section End -->
+            </div>
+
+
+        </section>
+
+    </main>
+
+    <!-- scriptsheet -->
+    <script src="./js/app.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

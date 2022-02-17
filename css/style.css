@@ -1,0 +1,8 @@
+.calculation-btn{
+    color: white;
+    background-image: linear-gradient(to bottom, #fd71a9 0%, #be5f84 100%);
+    border: none;
+    border-radius: 8px;
+    padding: 6px 20px;
+    cursor: pointer;
+}
