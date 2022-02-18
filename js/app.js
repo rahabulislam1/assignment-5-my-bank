@@ -1,8 +1,8 @@
 
 function convertToFlt(expenses) {
     const getAmount = document.getElementById(expenses);
-    let amount = parseInt(getAmount.value);
-    return amount;
+    let amount = parseFloat(getAmount.value).toFixed(3);
+    return parseFloat(amount);
 }
 function totalExpenses() {
     const allExpenses = convertToFlt('food-ex-input') + convertToFlt('rent-ex-input') + convertToFlt('clothes-ex-input');
@@ -12,6 +12,15 @@ function totalExpenses() {
 function setValue(fieldId, setFinalValue) {
     const getTotalExpenses = document.getElementById(fieldId);
     getTotalExpenses.innerText = setFinalValue;
+}
+
+function clearSavingValue() {
+    const clearSave = document.getElementById('save-input');
+    const clearExpenses = document.getElementById('saving-amount');
+    const clearRemainingB = document.getElementById('remaining-balance');
+    clearExpenses.innerText = '0000';
+    clearRemainingB.innerText = '0000';
+    clearSave.value = '';
 }
 
 document.getElementById('calculate-btn').addEventListener('click', function () {
@@ -27,19 +36,22 @@ document.getElementById('calculate-btn').addEventListener('click', function () {
     }
     else {
         if (isNaN(getFood) || getFood < 0) {
-            alert("Please give valid Food expenses first!!")
+            alert("Please give valid Food expenses first!!");
         }
         else if (isNaN(getRent) || getRent < 0) {
             alert("Please give valid Rent expenses first!!");
         }
         else if (isNaN(getClothes) || getClothes < 0) {
-            alert("Please give valid Clothes expenses first!!")
+            alert("Please give valid Clothes expenses first!!");
+        }
+        else if (totalExpenses() > getIncome) {
+            alert("You don't have sufficient balance!!");
         }
         else {
             //set total expenses
             setValue('total-expenses', totalExpenses());
             // final balance
-            const balance = getIncome - totalExpenses();
+            const balance = convertToFlt('income-input') - totalExpenses();
             //set final Balance after expenses
             setValue('balance', balance);
         }
@@ -55,21 +67,30 @@ document.getElementById('save-btn').addEventListener('click', function () {
         successMessage.style.display = 'none';
         failNotification.style.display = 'block';
     }
+    // else if()
     else {
-        successMessage.style.display = 'block';
-        failNotification.style.display = 'none';
-
         //Get Saving Amount
         const savingAmount = (convertToFlt('income-input') * getSavePercent) / 100;
 
-        //Set Saving Amount
-        setValue('saving-amount', savingAmount);
+        successMessage.style.display = 'block';
+        failNotification.style.display = 'none';
 
         //Get Remaining Balance
         const finalExpenses = savingAmount + totalExpenses();
         const remainingBalance = convertToFlt('income-input') - finalExpenses;
 
-        //Set Remaining Balance
-        setValue('remaining-balance', remainingBalance);
+        //Error for Saving
+        if (remainingBalance < 0) {
+            successMessage.style.display = 'none';
+            clearSavingValue();
+            alert("You don't have sufficient money for saving");
+        }
+        else {
+            //Set Saving Amount
+            setValue('saving-amount', savingAmount);
+            //Set Remaining Balance
+            setValue('remaining-balance', remainingBalance);
+        }
+
     }
 })
