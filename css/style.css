@@ -1,6 +1,12 @@
+.body-color {
+    /* background: #10101B; */
+    background-color: #10101B;
+    color: rgb(170, 180, 173);
+}
+
 .calculation-btn{
     color: white;
-    background-image: linear-gradient(to bottom, #fd71a9 0%, #be5f84 100%);
+    background-image: linear-gradient(to bottom, #626cbd 0%, #091347 100%);
     border: none;
     border-radius: 8px;
     padding: 6px 20px;
@@ -11,9 +17,9 @@
     color: #fff;
     text-align: center;
     margin: 0 auto;
-    background: #333622;
+    background: #55a79c;
     margin-top: 20px;
     border-radius: 15px;
-    padding: 5px 20px;
+    padding: 5px 17px;
     display: none;
 }

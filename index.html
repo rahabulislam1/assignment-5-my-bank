@@ -12,75 +12,83 @@
     <link rel="stylesheet" href="./css/bootstrap.min.css">
 </head>
 
-<body class="bg-info bg-opacity-10">
+<body class="body-color">
     <!-- Header section Start -->
     <header>
-        <h2 class="m-2 text-center mb-5 fw-bold">My Bank</h2>
+        <h2 class="m-3 text-center fw-bold">My Bank</h2>
     </header>
     <!-- Header section End -->
 
-    <main class="w-75 mx-auto bg-success bg-opacity-25 rounded-3">
+    <main class="w-75 mx-auto mb-4 bg-success bg-opacity-25 rounded-3">
 
         <section class="container">
             <div class="row p-2 ">
                 <!-- Image section Start -->
                 <div class="col-lg-6 col-sm-12">
-                    <img class="img-fluid" style="height: 450px;" src="./images/myBank.jpg" alt="">
+                    <img class="img-fluid" src="./images/myBank2.jpg" alt="">
                 </div>
                 <!-- Image section End -->
 
                 <!-- Calculation Section Start -->
-                <div class="col-lg-6 col-sm-12 mt-4 d-flex flex-column justify-content-center align-items-center">
-                    <h4 class="text-center">Income: </h4>
+                <div class="col-lg-6 col-sm-12 mt-4 d-flex flex-column align-items-center">
+                    <h4 class="text-center">Income</h4>
                     <div class="mb-3 row">
-                        <label class="col-sm-2 col-form-label">Income: </label>
-                        <div class="col-sm-10">
-                            <input id="income-input" type="text" class="form-control" placeholder="Income Amount">
+                        <div class="col-3 col-sm-2 ">
+                            <label class="col-form-label">Income:</label>
+                        </div>
+                        <div class="col-9 col-sm-10">
+                            <input id="income-input" style="width: 180px;" type="text" class="form-control ms-1"
+                                placeholder="Income Amount">
                         </div>
                     </div>
                     <h4 class="text-center">Expenses</h4>
                     <div class="mb-3 row">
-                        <div class="col-sm-2">
+                        <div class="col-3 col-sm-2">
                             <label class="col-form-label">Food: </label>
                         </div>
-                        <div class="col-sm-10">
-                            <input id="food-ex-input" type="text" class="form-control" placeholder="Food Expenses">
+                        <div class="col-9 col-sm-10">
+                            <input id="food-ex-input" style="width: 180px;" type="text" class="form-control"
+                                placeholder="Food Expenses">
                         </div>
                     </div>
                     <div class="mb-3 row">
-                        <label class="col-sm-2 col-form-label">Rent: </label>
-                        <div class="col-sm-10">
-                            <input id="rent-ex-input" type="text" class="form-control" placeholder="Rent Expenses">
+                        <div class="col-3 col-sm-2 ">
+                            <label class="col-form-label">Rent: </label>
+                        </div>
+                        <div class="col-9 col-sm-10">
+                            <input id="rent-ex-input" style="width: 180px;" type="text" class="form-control"
+                                placeholder="Rent Expenses">
                         </div>
                     </div>
                     <div class="mb-3 row">
-                        <label class="col-sm-2 col-form-label">Clothes: </label>
-                        <div class="col-sm-10">
-                            <input id="clothes-ex-input" type="text" class="form-control"
+                        <div class="col-3 col-sm-2">
+                            <label class="col-form-label">Clothes: </label>
+                        </div>
+                        <div class="col-9 col-sm-10">
+                            <input id="clothes-ex-input" style="width: 180px;" type="text" class="form-control ms-1"
                                 placeholder="Clothes Expenses">
                         </div>
                     </div>
                     <button id="calculate-btn" class="m-2 calculation-btn">Calculate</button>
-                    <p><strong>Total Expenses: </strong><span id="total-expenses">0000</span> </p>
+                    <p class="mt-4"><strong>Total Expenses: </strong><span id="total-expenses">0000</span> </p>
                     <p><strong>Balance: </strong><span id="balance">0000</span> </p>
 
                     <div class="row g-1 ">
-                        <div class="col-auto">
-                            <label class=" col-auto">Save: </label>
+                        <div class="col-2">
+                            <label class="col-form-label"><strong>Save:</strong></label>
                         </div>
-                        <div class="col-auto">
-                            <input type="text" class="form-control" style="width: 100px;" id="save-input"
-                                placeholder="Save %">
+                        <div class="col-5">
+                            <input type="text" class="form-control" id="save-input" placeholder="Save %">
                         </div>
-                        <div class="col-auto">
-                            <label class=" col-auto"> % </label>
+                        <div class="col-1">
+                            <label class="col-form-label"><strong>%</strong></label>
                         </div>
-                        <div class="col-auto">
+                        <div class="col-4">
                             <button id="save-btn" class="calculation-btn">Save</button>
                         </div>
                     </div>
 
-                    <p><strong>Saving Amount: </strong><span id="saving-amount">0000</span> </p>
+                    <p class="mt-4"><strong>Saving Amount: </strong><span id="saving-amount">0000</span> </p>
                     <p><strong>Remaining Balance: </strong><span id="remaining-balance">0000</span> </p>
 
                     <!-- Notify Section Start -->
