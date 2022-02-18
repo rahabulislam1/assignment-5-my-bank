@@ -22,43 +22,88 @@
     <main class="w-75 mx-auto bg-success bg-opacity-25 rounded-3">
 
         <section class="container">
-            <div class="row p-4">
+            <div class="row p-4 ">
                 <!-- Image section Start -->
-                <div class="col col-lg-6 col-sm-12">
+                <div class="col-lg-6 col-sm-12">
                     <img class="img-fluid" style="height: 450px;" src="./images/myBank.jpg" alt="">
                 </div>
                 <!-- Image section End -->
 
                 <!-- Calculation Section Start -->
-                <div class="col col-lg-6 col-sm-12 d-flex flex-column align-items-center mt-4">
-                    <h4 class="text-center">Income</h4>
+                <div class="col-lg-6 col-sm-12 mt-4 d-flex flex-column justify-content-center align-items-center">
+                    <h4 class="text-center">Income: </h4>
+                    <div class="mb-3 row">
+                        <label class="col-sm-2 col-form-label">Income: </label>
+                        <div class="col-sm-10">
+                            <input id="income-input" type="text" class="form-control" placeholder="Income Amount">
+                        </div>
+                    </div>
+                    <!-- 
                     <div class="m-1">
                         <span>Income:</span>
                         <input id="income-input" type="text" placeholder="Income">
-                    </div>
+                    </div> -->
                     <h4 class="text-center">Expenses</h4>
-                    <div class="m-1 ms-4">
+                    <div class="mb-3 row">
+                        <div class="col-sm-2">
+                            <label class="col-form-label">Food: </label>
+                        </div>
+                        <div class="col-sm-10">
+                            <input id="food-ex-input" type="text" class="form-control" placeholder="Food Expenses">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label class="col-sm-2 col-form-label">Rent: </label>
+                        <div class="col-sm-10">
+                            <input id="rent-ex-input" type="text" class="form-control" placeholder="Rent Expenses">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label class="col-sm-2 col-form-label">Clothes: </label>
+                        <div class="col-sm-10">
+                            <input id="clothes-ex-input" type="text" class="form-control"
+                                placeholder="Clothes Expenses">
+                        </div>
+                    </div>
+                    <!-- <div class="m-1 ms-4">
                         <span>Food:</span>
                         <input id="food-ex-input" type="text" placeholder="Food Expenses">
-                    </div>
-                    <div class="m-1 ms-4">
+                    </div> -->
+                    <!-- <div class="m-1 ms-4">
                         <span>Rent:</span>
                         <input id="rent-ex-input" type="text" placeholder="Rent Expenses">
                     </div>
                     <div class="m-1">
                         <span>Clothes:</span>
                         <input id="clothes-ex-input" type="text" placeholder="Clothes Expenses">
-                    </div>
+                    </div> -->
                     <button id="calculate-btn" class="m-2 calculation-btn">Calculate</button>
 
                     <p><strong>Total Expenses: </strong><span id="total-expenses">0000</span> </p>
                     <p><strong>Balance: </strong><span id="balance">0000</span> </p>
 
-                    <div>
+                    <!-- <div>
                         <span>Save: </span>
-                        <input id="save-input" type="text" placeholder="Save Amount">
+                        <input id="save-input" type="text" class="form-control"
+                                placeholder="Save Amount">
                         <span><strong> % </strong></span>
                         <button id="save-btn" class="m-2 calculation-btn">Save</button>
+                    </div> -->
+
+                    <div class="row g-1 ">
+                        <div class="col-auto">
+                            <label class=" col-auto">Save: </label>
+                        </div>
+                        <div class="col-auto">
+                            <input type="text" class="form-control" style="width: 100px;" id="save-input"
+                                placeholder="Save %">
+                        </div>
+                        <div class="col-auto">
+                            <label class=" col-auto"> % </label>
+                        </div>
+                        <div class="col-auto">
+                            <button id="save-btn" class="calculation-btn">Save</button>
+                        </div>
                     </div>
 
                     <p><strong>Saving Amount: </strong><span id="saving-amount">0000</span> </p>
@@ -66,10 +111,11 @@
                 </div>
                 <!-- Calculation Section End -->
             </div>
-
-
         </section>
-
+        <div class="notify-section">
+            <p id="notify-fail" class="notify">❌ Pin Didn't Match, Please try again</p>
+            <p id="notify-success" class="notify">✅ Pin Matched... Secret door is opening for you</p>
+        </div>
     </main>
 
     <!-- scriptsheet -->

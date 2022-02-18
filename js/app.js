@@ -1,44 +1,61 @@
-// function convertToFlt(){
 
-// }
 
+function convertToFlt(expenses) {
+    const getAmount = document.getElementById(expenses);
+    // console.log(getAmount);
+    let amount = parseInt(getAmount.value);
+    console.log(amount);
+    // if (isNaN(amount)) {
+    //     alert2 = alert('Hello world!');
+    // }
+    // else if (amount < 0) {
+    //     // const alert2 = alert('Hello world!');
+    //     return "6";
+    // }
+
+    if (amount < 0) {
+        alert('Hrld!');
+    }
+    return amount;
+}
 function totalExpenses() {
-    const getFood = document.getElementById('food-ex-input');
-    const getRent = document.getElementById('rent-ex-input');
-    const getClothes = document.getElementById('clothes-ex-input');
-
-    const allExpenses = parseFloat(getFood.value) + parseFloat(getRent.value) + parseFloat(getClothes.value);
+    const allExpenses = convertToFlt('food-ex-input') + convertToFlt('rent-ex-input') + convertToFlt('clothes-ex-input');
     return allExpenses;
 }
-
-// function finalBalance(expenceTotal) {
-// }
-
+function setValue(fieldId, setFinalValue) {
+    const getTotalExpenses = document.getElementById(fieldId);
+    getTotalExpenses.innerText = setFinalValue;
+}
 
 document.getElementById('calculate-btn').addEventListener('click', function () {
-    const getIncome = document.getElementById('income-input');
+    const getIncome = convertToFlt('income-input');
 
-    const getTotalExpenses = document.getElementById('total-expenses');
-    getTotalExpenses.innerText = totalExpenses();
+    //set total expenses
+    setValue('total-expenses', totalExpenses());
 
-    // finalBalance(allExpenses);
-    const getBalance = document.getElementById('balance');
-    const balance = parseFloat(getIncome.value) - totalExpenses();
-    getBalance.innerText = balance;
+    // final balance
+    const balance = getIncome - totalExpenses();
+
+    //set final Balance after expenses
+    setValue('balance', balance);
 });
 
 document.getElementById('save-btn').addEventListener('click', function () {
-    const getIncome = document.getElementById('income-input');
 
-    const getSavePercent = document.getElementById('save-input');
-    const savingAmount = (parseFloat(getIncome.value) * parseFloat(getSavePercent.value)) / 100;
+    const getSavePercent = convertToFlt('save-input');
+    // console.log(getSavePercent);
+    if (getSavePercent < 0) {
+        alert('Hrld!');
+    }
+    const savingAmount = (convertToFlt('income-input') * getSavePercent) / 100;
 
-    const getSaveAmount = document.getElementById('saving-amount');
-    getSaveAmount.innerText = savingAmount;
+    //set saving amount value
+    setValue('saving-amount', savingAmount);
 
-    const getRemainingBalance = document.getElementById('remaining-balance');
     const finalExpenses = savingAmount + totalExpenses();
-    const remainingBalance = parseFloat(getIncome.value) - finalExpenses;
-    getRemainingBalance.innerText = remainingBalance;
+    const remainingBalance = convertToFlt('income-input') - finalExpenses;
+
+    //set remaining Balance
+    setValue('remaining-balance', remainingBalance);
 
 })
