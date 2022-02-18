@@ -15,14 +15,14 @@
 <body class="bg-info bg-opacity-10">
     <!-- Header section Start -->
     <header>
-        <h2 class="m-5 text-center mb-5 fw-bold">My Bank</h2>
+        <h2 class="m-2 text-center mb-5 fw-bold">My Bank</h2>
     </header>
     <!-- Header section End -->
 
     <main class="w-75 mx-auto bg-success bg-opacity-25 rounded-3">
 
         <section class="container">
-            <div class="row p-4 ">
+            <div class="row p-2 ">
                 <!-- Image section Start -->
                 <div class="col-lg-6 col-sm-12">
                     <img class="img-fluid" style="height: 450px;" src="./images/myBank.jpg" alt="">
@@ -38,11 +38,6 @@
                             <input id="income-input" type="text" class="form-control" placeholder="Income Amount">
                         </div>
                     </div>
-                    <!-- 
-                    <div class="m-1">
-                        <span>Income:</span>
-                        <input id="income-input" type="text" placeholder="Income">
-                    </div> -->
                     <h4 class="text-center">Expenses</h4>
                     <div class="mb-3 row">
                         <div class="col-sm-2">
@@ -65,30 +60,9 @@
                                 placeholder="Clothes Expenses">
                         </div>
                     </div>
-                    <!-- <div class="m-1 ms-4">
-                        <span>Food:</span>
-                        <input id="food-ex-input" type="text" placeholder="Food Expenses">
-                    </div> -->
-                    <!-- <div class="m-1 ms-4">
-                        <span>Rent:</span>
-                        <input id="rent-ex-input" type="text" placeholder="Rent Expenses">
-                    </div>
-                    <div class="m-1">
-                        <span>Clothes:</span>
-                        <input id="clothes-ex-input" type="text" placeholder="Clothes Expenses">
-                    </div> -->
                     <button id="calculate-btn" class="m-2 calculation-btn">Calculate</button>
-
                     <p><strong>Total Expenses: </strong><span id="total-expenses">0000</span> </p>
                     <p><strong>Balance: </strong><span id="balance">0000</span> </p>
-
-                    <!-- <div>
-                        <span>Save: </span>
-                        <input id="save-input" type="text" class="form-control"
-                                placeholder="Save Amount">
-                        <span><strong> % </strong></span>
-                        <button id="save-btn" class="m-2 calculation-btn">Save</button>
-                    </div> -->
 
                     <div class="row g-1 ">
                         <div class="col-auto">
@@ -108,14 +82,18 @@
 
                     <p><strong>Saving Amount: </strong><span id="saving-amount">0000</span> </p>
                     <p><strong>Remaining Balance: </strong><span id="remaining-balance">0000</span> </p>
+
+                    <!-- Notify Section Start -->
+                    <div class=" row notify-section">
+                        <p id="notify-fail" class="notify">❌ Please give valid Save percentage first!!</p>
+                        <p id="notify-success" class="notify">✅ All Input Values are currect.</p>
+                    </div>
+                    <!-- Notify Section End -->
                 </div>
                 <!-- Calculation Section End -->
+
             </div>
         </section>
-        <div class="notify-section">
-            <p id="notify-fail" class="notify">❌ Pin Didn't Match, Please try again</p>
-            <p id="notify-success" class="notify">✅ Pin Matched... Secret door is opening for you</p>
-        </div>
     </main>
 
     <!-- scriptsheet -->

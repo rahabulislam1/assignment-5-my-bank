@@ -48,18 +48,28 @@ document.getElementById('calculate-btn').addEventListener('click', function () {
 
 document.getElementById('save-btn').addEventListener('click', function () {
     const getSavePercent = convertToFlt('save-input');
-    if (getSavePercent < 0) {
-        alert('Hrld!');
+    const successMessage = document.getElementById('notify-success');
+    const failNotification = document.getElementById('notify-fail');
+
+    if (isNaN(getSavePercent) || getSavePercent < 0) {
+        successMessage.style.display = 'none';
+        failNotification.style.display = 'block';
     }
-    const savingAmount = (convertToFlt('income-input') * getSavePercent) / 100;
+    else {
+        successMessage.style.display = 'block';
+        failNotification.style.display = 'none';
 
-    //set saving amount value
-    setValue('saving-amount', savingAmount);
+        //Get Saving Amount
+        const savingAmount = (convertToFlt('income-input') * getSavePercent) / 100;
 
-    const finalExpenses = savingAmount + totalExpenses();
-    const remainingBalance = convertToFlt('income-input') - finalExpenses;
+        //Set Saving Amount
+        setValue('saving-amount', savingAmount);
 
-    //set remaining Balance
-    setValue('remaining-balance', remainingBalance);
+        //Get Remaining Balance
+        const finalExpenses = savingAmount + totalExpenses();
+        const remainingBalance = convertToFlt('income-input') - finalExpenses;
 
+        //Set Remaining Balance
+        setValue('remaining-balance', remainingBalance);
+    }
 })
